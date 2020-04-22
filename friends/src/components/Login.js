@@ -1,6 +1,8 @@
 import React from "react"
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
+
+
 class Login extends React.Component {
 
     constructor() {
@@ -42,15 +44,17 @@ class Login extends React.Component {
 
     render() {
         return (
+        <div className='navbody'>
             <div className="LoginPage">
-                <h2>Login Page</h2>
+                <h2 className='loghead'>Login Page</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <input name="username" placeholder="Username" onChange={this.handleChange}/>
-                    <input type = "password"name="password" placeholder="Password" onChange={this.handleChange}/>
-                    <button>Login</button>
+                    <input className='user' name="username" placeholder="Username" onChange={this.handleChange}/> <br/>
+                    <input className='pass' type = "password"name="password" placeholder="Password" onChange={this.handleChange}/> <br/>
+                    <button className='log'>Login</button>
                 </form>
-                {this.state.isLoading && <div><h3>Logging in</h3></div>}
+                
             </div>
+        </div>
         )
     }
 }

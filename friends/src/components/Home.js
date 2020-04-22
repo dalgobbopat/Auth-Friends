@@ -3,8 +3,12 @@ import React from 'react';
 const Home =() => {
     return(
         <>
+       
         <div>
-            <img src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80' alt='friends' />
+        <h2 className='heading'> Log in to see your friends</h2>
+        <div className='intro'>
+            <p>Check out the best website for keeping track of your friends, simply add new ones and have an entire card dedicated towards them!</p>
+        </div>  
         </div>
         </>
     )

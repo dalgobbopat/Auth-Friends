@@ -28,11 +28,11 @@ class AddFriend extends React.Component{
             <div className="AddFriend">
                 <h2>Add Friend</h2>
                 <form onSubmit={this.submitHandler}>
-                    <input onChange={this.changeHandler} placeholder="Name" name="name" />
-                    <input onChange={this.changeHandler} placeholder="Age" name="age" />
-                    <input onChange={this.changeHandler} placeholder="Email" name="email" />
-                    <input onChange={this.changeHandler} placeholder="ID" name="id" />
-                    <button>Add Friend</button>
+                    <input className='pass' onChange={this.changeHandler} placeholder="Name" name="name" /> <br/>
+                    <input className='pass' onChange={this.changeHandler} placeholder="Age" name="age" /> <br/>
+                    <input className='pass' onChange={this.changeHandler} placeholder="Email" name="email" /> <br/>
+                    <input className='pass' onChange={this.changeHandler} placeholder="ID" name="id" /> <br/>
+                    <button className='log'>Add Friend</button>
                 </form>
             </div>
         )
