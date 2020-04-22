@@ -52,10 +52,10 @@ class FriendsList extends React.Component{
                             <h4>{`${friend.age} years old`}</h4>
                             <h4>{`${friend.email}`}</h4>
                             <div className="DeleteFriend">
-                <h2>Delete Friend :(</h2>
+                <p>Delete</p>
                 <form onSubmit={this.submitHandler}>
                     <input onChange={this.changeHandler} placeholder="Enter an id"/>
-                    <button>Delete Friend</button>
+                    <button>X</button>
                 </form>
             </div>
                           
