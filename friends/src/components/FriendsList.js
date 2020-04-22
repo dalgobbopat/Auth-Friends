@@ -5,7 +5,7 @@ class FriendsList extends React.Component{
 
     constructor(){
         super();
-        this.state = { friends: [], }
+        this.state = { friends: [], id: '', deletedFriend: ''}
     }
 
     componentDidMount() {
@@ -25,6 +25,21 @@ class FriendsList extends React.Component{
         })
     }
 
+    submitHandler = (event) => {
+        event.preventDefault();
+        axiosWithAuth().delete(`/api/friends/${this.state.id}`)
+        .then(res => {
+            console.log(res)
+            alert(`Deleted friend with id of: ${this.state.id}`);
+        })
+        .catch(err => console.log(err))
+    }
+
+    changeHandler = (event) => {
+        this.setState( { id: event.target.value})
+        console.log(this.state.id)
+    }
+
     render(){
         return(
             <div className="FriendsList">
@@ -36,6 +51,13 @@ class FriendsList extends React.Component{
                             <h4>{`${friend.name}`}</h4>
                             <h4>{`${friend.age} years old`}</h4>
                             <h4>{`${friend.email}`}</h4>
+                            <div className="DeleteFriend">
+                <h2>Delete Friend :(</h2>
+                <form onSubmit={this.submitHandler}>
+                    <input onChange={this.changeHandler} placeholder="Enter an id"/>
+                    <button>Delete Friend</button>
+                </form>
+            </div>
                           
                         </div>)
                     }
